@@ -60,9 +60,9 @@ let tasks = [
 ];
 
 router.post("/tasks", (req, res) => {
-  console.log(req.body);
   const { title, description } = req.body;
-  const newTask = { id: tasks.length + 1, title, description };
+  const newId = tasks[tasks.length - 1].id + 1;
+  const newTask = { id: newId, title, description };
 
   tasks.push(newTask);
 
@@ -76,8 +76,6 @@ router.get("/tasks", (req, res) => {
 router.get("/tasks/:id", (req, res) => {
   const taskId = parseInt(req.params.id);
   const task = tasks.find((task) => task.id === taskId);
-
-  console.log(taskId);
 
   if (task) {
     res.status(200).json(task);
