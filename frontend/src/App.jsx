@@ -1,7 +1,11 @@
 import TaskList from "./components/TaskList";
 
 import "./App.css";
+import "./assets/styles/TaskList.css";
+import "./assets/styles/TaskItem.css";
+import "./assets/styles/TaskForm.css";
 import { useEffect, useState } from "react";
+import TaskForm from "./components/TaskForm";
 
 function App() {
   const [tasks, setTasks] = useState();
@@ -20,7 +24,8 @@ function App() {
   return (
     <>
       <h1>My Tasks</h1>
-      {tasks && <TaskList tasks={tasks} />}
+      <TaskForm setTasks={setTasks} />
+      {tasks && <TaskList tasks={tasks} setTasks={setTasks} />}
     </>
   );
 }

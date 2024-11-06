@@ -28,38 +28,39 @@ let tasks = [
     title: "Code review",
     description: "Conduct a thorough code review for the new feature branch.",
   },
-  {
-    id: 6,
-    title: "Prepare presentation",
-    description: "Prepare slides for the upcoming quarterly review meeting.",
-  },
-  {
-    id: 7,
-    title: "Fix bugs in user authentication",
-    description:
-      "Resolve login issues and enhance error handling for better UX.",
-  },
-  {
-    id: 8,
-    title: "Database backup",
-    description:
-      "Run a backup of the production database to ensure data safety.",
-  },
-  {
-    id: 9,
-    title: "Research competitor products",
-    description:
-      "Analyze features of competitor products to improve our offerings.",
-  },
-  {
-    id: 10,
-    title: "Write documentation for API",
-    description:
-      "Complete the documentation for the newly added API endpoints.",
-  },
+  // {
+  //   id: 6,
+  //   title: "Prepare presentation",
+  //   description: "Prepare slides for the upcoming quarterly review meeting.",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Fix bugs in user authentication",
+  //   description:
+  //     "Resolve login issues and enhance error handling for better UX.",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Database backup",
+  //   description:
+  //     "Run a backup of the production database to ensure data safety.",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Research competitor products",
+  //   description:
+  //     "Analyze features of competitor products to improve our offerings.",
+  // },
+  // {
+  //   id: 10,
+  //   title: "Write documentation for API",
+  //   description:
+  //     "Complete the documentation for the newly added API endpoints.",
+  // },
 ];
 
 router.post("/tasks", (req, res) => {
+  console.log(req.body);
   const { title, description } = req.body;
   const newTask = { id: tasks.length + 1, title, description };
 
